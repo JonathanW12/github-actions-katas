@@ -20,10 +20,10 @@ jobs:
     - name: Download a single artifact
       uses: actions/download-artifact@v2
       with:
-        name: my-artifact
-        path: path/to/download/artifact/
+        name: build-artefact
+        path: .
     - name: Test
-    run: ci/unit-test-app.sh
+      run: ci/unit-test-app.sh
   third_job:
     needs: first_job
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
     - name: Download a single artifact
       uses: actions/download-artifact@v2
       with:
-        name: my-artifact
-        path: path/to/download/artifact/
+        name: build-artefact
+        path: .
     - name: Build
-    run: ci/build-app.sh
+      run: ci/build-app.sh
