@@ -1,8 +1,8 @@
-name: pipe-with-unit-test
+name: added upload
 on: push
 jobs:
   my-job:
-    name: job-name
+    name: Upload artifact
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
     steps:
@@ -11,3 +11,8 @@ jobs:
       -  run: ci/build-app.sh
       - name: Unit-test
         run: ci/unit-test-app.sh
+      - name: Upload-Repository
+          uses: actions/upload-artifact@v2
+          with:
+            name: code
+            path: .
