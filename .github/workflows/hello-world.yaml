@@ -1,5 +1,5 @@
 name: added upload
-on: push
+#on: push
 jobs:
   first_job:
     name: Upload artifact

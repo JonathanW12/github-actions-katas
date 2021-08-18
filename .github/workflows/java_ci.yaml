@@ -23,6 +23,7 @@ jobs:
         name: build-artifact
         path: .
     - name: Test
+      shell: bash
       run: ci/unit-test-app.sh
   third_job:
     needs: first_job
@@ -35,4 +36,5 @@ jobs:
         name: build-artifact
         path: .
     - name: Build
+      shell: bash
       run: ci/build-app.sh
