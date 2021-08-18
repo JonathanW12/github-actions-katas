@@ -1,4 +1,4 @@
-name: hello-world
+name: pipe-with-unit-test
 on: push
 jobs:
   my-job:
@@ -8,3 +8,5 @@ jobs:
       - name: Clone-down
         uses: actions/checkout@v2 
       -  run: ci/build-app.sh
+      - name: Unit-test
+        run: ci/unit-test-app.sh
