@@ -2,6 +2,7 @@ name: pipe-with-unit-test
 on: push
 jobs:
   my-job:
+    name: job-name
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
     steps:
