@@ -1,5 +1,5 @@
 name: Docker-Image2
-#on: push
+on: push
 jobs:
   first_job:
     runs-on: ubuntu-latest
@@ -57,3 +57,12 @@ jobs:
       run: export GIT_COMMIT="GA-$GITHUB_SHA" && bash ci/build-docker.sh
     - name: Docker Push
       run: export GIT_COMMIT="GA-$GITHUB_SHA" && bash ci/push-docker.sh
+  component_test:
+    needs: docker_image
+    runs-on: ubuntu-latest
+    env:
+      docker_username: ${{ secrets.DOCKERHUB_USER }}
+      docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+    steps:
+      - name: component-test
+        run: bash ci/component-test.sh
