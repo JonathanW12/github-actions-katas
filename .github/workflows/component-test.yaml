@@ -59,7 +59,7 @@ jobs:
       run: export GIT_COMMIT="GA-$GITHUB_SHA" && bash ci/push-docker.sh
   component_test:
     needs: docker_image
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     env:
       docker_username: ${{ secrets.DOCKERHUB_USER }}
       docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
