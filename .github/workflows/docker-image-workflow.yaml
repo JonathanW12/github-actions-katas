@@ -45,8 +45,8 @@ jobs:
     needs: [second_job,third_job]
     runs-on: ubuntu-latest
     env:
-      docker_username: ${{ secrets.DOCKER_USER }}
-      docker_password: ${{ secrets.DOCKER_PASSWORD }}
+      docker_username: ${{ secrets.DOCKERHUB_USER }}
+      docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
     steps:
     - name: Download a single artifact 2
       uses: actions/download-artifact@v2
