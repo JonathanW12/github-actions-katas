@@ -1,7 +1,7 @@
 name: added upload
 on: push
 jobs:
-  my-job:
+  first_job:
     name: Upload artifact
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
